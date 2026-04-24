@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/netvapk.webp" type="image/x-icon">
+    <title>Netv Gold V10 | Teknik Analiz ve İndirme Merkezi</title>
+    <meta name="description" content="Netv Gold V10 teknik incelemesi, sistem gereksinimleri, güvenlik analizleri ve güvenli indirme bağlantısı. Yüksek performanslı yeni nesil sürüm detayları.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Netv Gold V10",
+      "operatingSystem": "Android",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "12540"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Netv Gold V10 hangi cihazlarla uyumludur?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Android 5.0 ve üzeri işletim sistemine sahip tüm akıllı telefonlar, Android TV'ler ve TV Box cihazları ile tam uyumludur."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Kurulum sırasında nelere dikkat etmeliyim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cihazınızın güvenlik ayarlarından 'Bilinmeyen Kaynaklar' seçeneğini aktif hale getirmeniz ve ardından indirilen APK dosyasını çalıştırmanız yeterlidir."
+        }
+      }]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --carbon: #121212;
+            --carbon-light: #1e1e1e;
+            --green: #00FF41;
+            --amber: #FFBF00;
+            --text-main: #e0e0e0;
+            --text-muted: #888888;
+            --border: #333333;
+            --font-head: 'JetBrains Mono', monospace;
+            --font-body: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: 
+                linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        .data-stream {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.05"><text x="10" y="20" fill="%2300FF41" font-family="monospace" font-size="10">10101</text><text x="40" y="60" fill="%2300FF41" font-family="monospace" font-size="10">01010</text><text x="80" y="90" fill="%2300FF41" font-family="monospace" font-size="10">11011</text></svg>');
+            animation: scrollData 20s linear infinite;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes scrollData {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 1000px; }
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-head);
+            font-weight: 700;
+            color: var(--green);
+        }
+
+        a {
+            color: var(--amber);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--green);
+        }
+
+        /* Layout Grid */
+        .system-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            align-items: start;
+        }
+
+        /* Sidebar (ToC) */
+        .system-index {
+            position: sticky;
+            top: 2rem;
+            background: var(--carbon);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .module-header {
+            background: var(--carbon-light);
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            font-family: var(--font-head);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .window-controls span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-left: 6px;
+        }
+        .win-min { background-color: var(--amber); }
+        .win-max { background-color: var(--green); }
+        .win-cls { background-color: #FF3B30; }
+
+        .system-index ul {
+            list-style: none;
+            padding: 1rem;
+        }
+
+        .system-index li {
+            margin-bottom: 0.8rem;
+        }
+
+        .system-index a {
+            display: block;
+            font-family: var(--font-head);
+            font-size: 0.85rem;
+            color: var(--text-main);
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .system-index a::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .system-index a:hover::before {
+            opacity: 1;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Modules */
+        .module {
+            background: var(--carbon);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .module:hover {
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
+            border-color: rgba(0, 255, 65, 0.3);
+        }
+
+        .module-body {
+            padding: 2rem;
+        }
+
+        .module-body p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: #cccccc;
+        }
+
+        .module-body h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        /* Hero / Header */
+        .hero {
+            text-align: left;
+            padding: 3rem 2rem;
+            position: relative;
+        }
+
+        .terminal-logo {
+            font-family: var(--font-head);
+            font-size: 2rem;
+            color: var(--green);
+            margin-bottom: 1rem;
+            display: inline-block;
+            border: 2px solid var(--green);
+            padding: 0.5rem 1rem;
+            background: rgba(0, 255, 65, 0.05);
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+        }
+
+        /* Typewriter Effect */
+        .typewriter {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            border-right: 3px solid var(--green);
+            white-space: pre-wrap;
+            overflow: hidden;
+            animation: blinkCursor .75s step-end infinite;
+        }
+
+        @keyframes blinkCursor {
+            from, to { border-color: transparent }
+            50% { border-color: var(--green); }
+        }
+
+        .status-bar {
+            display: flex;
+            gap: 2rem;
+            font-family: var(--font-head);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            background: var(--carbon-light);
+            padding: 1rem;
+            border-left: 3px solid var(--green);
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .led {
+            width: 10px;
+            height: 10px;
+            background-color: var(--green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--green);
+            animation: pulse 2s infinite;
+        }
+
+        .led.amber {
+            background-color: var(--amber);
+            box-shadow: 0 0 10px var(--amber);
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; box-shadow: 0 0 10px var(--green); }
+            50% { opacity: 0.4; box-shadow: 0 0 2px var(--green); }
+            100% { opacity: 1; box-shadow: 0 0 10px var(--green); }
+        }
+
+        /* Download Button */
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: transparent;
+            color: var(--green);
+            font-family: var(--font-head);
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border: 2px solid var(--green);
+            border-radius: 2px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-download:hover {
+            background: rgba(0, 255, 65, 0.1);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+            text-shadow: 0 0 5px var(--green);
+        }
+
+        .btn-download svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--green);
+        }
+
+        /* System Log / Pros Cons */
+        .system-log {
+            background: #000;
+            padding: 1.5rem;
+            font-family: var(--font-head);
+            font-size: 0.95rem;
+            border-left: 3px solid var(--amber);
+        }
+
+        .log-item {
+            margin-bottom: 0.8rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .log-pro { color: var(--text-main); }
+        .log-pro::before { content: '[+]'; color: var(--green); font-weight: bold; margin-right: 0.5rem; }
+        
+        .log-con { color: var(--text-muted); }
+        .log-con::before { content: '[-]'; color: #FF3B30; font-weight: bold; margin-right: 0.5rem; }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: var(--carbon-light);
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--green);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--amber);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        /* Monitor Frame Screenshots */
+        .monitor-frame {
+            background: #0a0a0a;
+            border: 2px solid #222;
+            border-radius: 8px 8px 0 0;
+            padding: 2px;
+            margin-bottom: 2rem;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+        }
+
+        .monitor-frame::after {
+            content: '';
+            display: block;
+            height: 15px;
+            background: #222;
+            border-radius: 0 0 8px 8px;
+            width: 100%;
+        }
+
+        .monitor-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #111;
+        }
+
+        /* Stability Meter (Star Rating) */
+        .stability-meter {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: var(--carbon-light);
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            color: var(--border);
+            cursor: pointer;
+        }
+
+        .star { transition: color 0.2s; }
+        .star.active, .star:hover, .star:hover ~ .star { color: var(--amber); }
+        .stars:hover .star { color: var(--border); }
+        .stars .star:hover, .stars .star:hover ~ .star { color: var(--amber); }
+
+        .rating-text {
+            font-family: var(--font-head);
+            font-size: 0.9rem;
+            color: var(--green);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--carbon);
+            border: 2px solid var(--green);
+            color: var(--green);
+            font-family: var(--font-head);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 100;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--green);
+            color: var(--carbon);
+        }
+
+        @media (max-width: 1024px) {
+            .system-grid {
+                grid-template-columns: 1fr;
+            }
+            .system-index {
+                position: static;
+                margin-bottom: 2rem;
+            }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .system-grid { padding: 1rem; gap: 1.5rem; }
+            .main-content { gap: 1.5rem; }
+            .module-body { padding: 1.2rem; }
+            .hero { padding: 1.5rem 1rem; }
+            .features-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .typewriter { font-size: 1.3rem; border-right-width: 2px; }
+            .status-bar { flex-direction: column; gap: 0.5rem; align-items: flex-start; padding: 0.8rem; }
+            .btn-download { width: 100%; justify-content: center; font-size: 1rem; padding: 0.8rem 1rem; }
+            .terminal-logo { font-size: 1.4rem; padding: 0.3rem 0.8rem; }
+            .stability-meter { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1rem; }
+            .module-body h2 { font-size: 1.3rem; }
+            .module-header { font-size: 0.75rem; padding: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="data-stream"></div>
+
+    <div class="system-grid">
+        
+        <!-- Sidebar / Table of Contents -->
+        <aside class="system-index" id="system-index">
+            <div class="module-header">
+                <span>> system_index.sh</span>
+                <div class="window-controls">
+                    <span class="win-cls"></span>
+                    <span class="win-min"></span>
+                    <span class="win-max"></span>
+                </div>
+            </div>
+            <ul>
+                <li><a href="#hero">Başlangıç</a></li>
+                <li><a href="#mimari">Yazılım Mimarisi</a></li>
+                <li><a href="#donanim">Donanım Uyumluluğu</a></li>
+                <li><a href="#guvenlik">Güvenlik Protokolleri</a></li>
+                <li><a href="#kurulum">Kurulum Rehberi</a></li>
+                <li><a href="#deneyim">Kullanıcı Deneyimi</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Hero Module -->
+            <section class="module hero" id="hero">
+                <div class="module-header">
+                    <span>> root@netv-v10:~#</span>
+                    <div class="window-controls">
+                        <span class="win-cls"></span>
+                        <span class="win-min"></span>
+                        <span class="win-max"></span>
+                    </div>
+                </div>
+                <div class="module-body">
+                    <div class="terminal-logo">
+                        [ V10_CORE ]
+                    </div>
+                    <h1 class="typewriter" id="typewriter-text"></h1>
+                    
+                    <div class="status-bar">
+                        <div class="status-item">
+                            <span class="led"></span>
+                            <span>System Status: Online</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="led"></span>
+                            <span>Safe to Download</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="led amber"></span>
+                            <span>Ver: 10.0.4 (Stable)</span>
+                        </div>
+                    </div>
+
+                    <p>En gelişmiş ağ teknolojileri ve optimize edilmiş medya işleme mimarisi ile donatılmış yeni nesil teknik analiz ve erişim merkezine hoş geldiniz. V10 güncellemesi, tam performans hedeflenerek sıfırdan derlenmiştir.</p>
+
+                    <a href="https://pub-73f6813dffa44aeea69e2aa035b76cb3.r2.dev/netvapk.apk" class="btn-download">
+                        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                        [Sistemi İndir - V10]
+                    </a>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <span class="feature-icon">⎛</span>
+                            <h3>Mikro-optimizasyon</h3>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">▤</span>
+                            <h3>Düşük Bellek Kullanımı</h3>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">☁</span>
+                            <h3>Hızlı Veri İletimi</h3>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">⚿</span>
+                            <h3>Uçtan Uca Şifreleme</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mimari Module -->
+            <section class="module" id="mimari">
+                <div class="module-header">
+                    <span>> analiz_mimari.exe</span>
+                    <div class="window-controls">
+                        <span class="win-cls"></span>
+                        <span class="win-min"></span>
+                        <span class="win-max"></span>
+                    </div>
+                </div>
+                <div class="module-body">
+                    <h2>V10 Güncellemesinin Yazılım Mimarisi ve Yenilikleri</h2>
+                    <p>Netv Gold V10, çekirdek yazılım mimarisinde yapılan kapsamlı optimizasyonlar sayesinde önceki sürümlere kıyasla olağanüstü bir performans artışı sunmaktadır. Geliştirici ekip, bellek sızıntılarını önlemek ve veri işleme hızını maksimize etmek amacıyla kod tabanını tamamen elden geçirmiştir. Yeni nesil V10 mimarisi, arka planda çalışan sistem kaynaklarının kullanımını minimize ederek eski cihazlarda bile takılma veya donma sorunlarını ortadan kaldırmaktadır. Özellikle önbellek yönetimi ve sunucu yanıt sürelerindeki iyileştirmeler, akıcı bir navigasyon deneyimi sağlamaktadır. Bu teknik yenilikler, V10'u sadece bir güncelleme değil, aynı zamanda kararlılık ve hız odaklı bir mühendislik başarısı haline getirmektedir.</p>
+                    
+                    <div class="monitor-frame">
+                        <img src="assets/app_screenshot_1_1777008634682.webp" alt="Netv Gold V10 Yazılım Mimarisi Arayüzü">
+                    </div>
+
+                    <div class="system-log">
+                        <div class="log-item log-pro">Yüksek kararlılık ve gelişmiş hız kapasitesi</div>
+                        <div class="log-item log-pro">Optimize edilmiş düşük RAM ve CPU tüketimi</div>
+                        <div class="log-item log-con">Eski Android sürümlerinde (5.0 altı) desteklenmez</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Donanım Module -->
+            <section class="module" id="donanim">
+                <div class="module-header">
+                    <span>> donanim_test.log</span>
+                    <div class="window-controls">
+                        <span class="win-cls"></span>
+                        <span class="win-min"></span>
+                        <span class="win-max"></span>
+                    </div>
+                </div>
+                <div class="module-body">
+                    <h2>Donanım Uyumluluğu: Hangi Cihazlarda En İyi Çalışır?</h2>
+                    <p>V10 sürümü, geniş bir donanım yelpazesinde sorunsuz çalışacak şekilde tasarlanmıştır. Android TV cihazları, akıllı kutular (Android Box) ve standart mobil akıllı telefonlar üzerinde yapılan stres testleri, uygulamanın evrensel bir uyumluluğa sahip olduğunu kanıtlamıştır. Android 5.0 ve üzeri tüm işletim sistemlerinde stabil çalışan bu sürüm, özellikle düşük RAM kapasitesine sahip eski cihazlarda dahi akıcılığını korumaktadır. Gelişmiş donanım hızlandırma desteği sayesinde işlemciye aşırı yük bindirmeden yüksek çözünürlüklü veri işleyebilmektedir. İster büyük ekranlı bir televizyon kullanın, ister mobil cihazınızda hareket halinde olun, donanım optimizasyonu sayesinde kesintisiz ve yüksek performanslı bir deneyim yaşayacaksınız.</p>
+                </div>
+            </section>
+
+            <!-- Güvenlik Module -->
+            <section class="module" id="guvenlik">
+                <div class="module-header">
+                    <span>> guvenlik_protokol_v2.sh</span>
+                    <div class="window-controls">
+                        <span class="win-cls"></span>
+                        <span class="win-min"></span>
+                        <span class="win-max"></span>
+                    </div>
+                </div>
+                <div class="module-body">
+                    <h2>Güvenlik Protokolleri ve Zararlı Yazılım Test Sonuçları</h2>
+                    <p>Kullanıcı güvenliği, Netv Gold V10 geliştirme sürecinin en kritik odak noktalarından biri olmuştur. Kurulum paketinin bütünlüğü, gelişmiş MD5 hash doğrulama algoritmaları kullanılarak titizlikle kontrol edilmektedir. Virustotal ve diğer önde gelen güvenlik analiz platformlarında gerçekleştirilen kapsamlı taramalar sonucunda, uygulamanın hiçbir zararlı yazılım, truva atı veya casus yazılım içermediği onaylanmıştır. Arka planda çalışan yeni güvenlik protokolleri, yetkisiz veri erişimini engellemekte ve kullanıcı gizliliğini maksimum düzeyde korumaktadır. Veri iletimi sırasında kullanılan uçtan uca şifreleme yöntemleri, dışarıdan gelebilecek siber tehditlere karşı güçlü bir kalkan oluşturmaktadır.</p>
+                    
+                    <div class="monitor-frame">
+                        <img src="assets/app_screenshot_2_1777008652474.webp" alt="Netv Gold V10 Güvenlik ve Ayarlar Arayüzü">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kurulum Module -->
+            <section class="module" id="kurulum">
+                <div class="module-header">
+                    <span>> install_wizard.bat</span>
+                    <div class="window-controls">
+                        <span class="win-cls"></span>
+                        <span class="win-min"></span>
+                        <span class="win-max"></span>
+                    </div>
+                </div>
+                <div class="module-body">
+                    <h2>Adım Adım Kurulum ve Konfigürasyon Rehberi</h2>
+                    <p>Netv Gold V10'un kurulum süreci, her seviyeden kullanıcının rahatlıkla tamamlayabileceği şekilde basitleştirilmiştir. Öncelikle sitemizden güvenli bağlantı aracılığıyla APK dosyasını indirin. İndirme işlemi tamamlandıktan sonra, cihazınızın ayarlar menüsünden 'Bilinmeyen Kaynaklar' seçeneğini aktif hale getirmeniz gerekmektedir. Dosya yöneticisini açarak indirdiğiniz dosyayı bulun ve üzerine tıklayarak kurulumu başlatın. Ekranda beliren yönergeleri takip ederek işlemi birkaç saniye içinde tamamlayabilirsiniz. Kurulum sonrası uygulamayı ilk kez açtığınızda, otomatik konfigürasyon sistemi gerekli ayarları cihazınıza en uygun şekilde yapılandıracaktır. Hiçbir ek yazılım gerektirmeden kullanıma hazırdır.</p>
+                    
+                    <div class="monitor-frame">
+                        <img src="assets/app_screenshot_3_1777008671357.webp" alt="Netv Gold V10 Kurulum İlerleme Ekranı">
+                    </div>
+                    
+                    <div class="system-log">
+                        <div class="log-item log-pro">Otomatik cihaz donanım profili algılama</div>
+                        <div class="log-item log-pro">Saniyeler içinde hızlı ve güvenli kurulum imkanı</div>
+                        <div class="log-item log-con">İlk kurulumda cihaz ayarlarından manuel izin gerektirir</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Deneyim Module -->
+            <section class="module" id="deneyim">
+                <div class="module-header">
+                    <span>> ui_ux_raporu.txt</span>
+                    <div class="window-controls">
+                        <span class="win-cls"></span>
+                        <span class="win-min"></span>
+                        <span class="win-max"></span>
+                    </div>
+                </div>
+                <div class="module-body">
+                    <h2>Kullanıcı Deneyimi ve Arayüz Akıcılığı Hakkında</h2>
+                    <p>V10 güncellemesi, teknik altyapısının yanı sıra son kullanıcı deneyimini zenginleştiren yenilikçi bir arayüz tasarımına da sahiptir. Göz yormayan karanlık mod seçenekleri ve minimalist menü yapıları, uzun süreli kullanımlarda bile konforlu bir navigasyon sağlamaktadır. Sayfa geçişlerindeki milisaniyelik tepki süreleri, uygulamanın ne kadar akıcı çalıştığını göstermektedir. Arayüz elemanlarının sezgisel yerleşimi, kullanıcıların aradıkları özelliklere en kısa yoldan ulaşmalarını mümkün kılmaktadır. Sistem kaynaklarını tüketmeyen hafif tasarım dili, cihazın pil ömrünü korurken, aynı zamanda görsel açıdan modern ve profesyonel bir hissiyat sunarak genel kullanıcı memnuniyetini üst seviyeye taşımaktadır.</p>
+
+                    <!-- Stability Meter Widget -->
+                    <div class="stability-meter">
+                        <div class="rating-label">
+                            <span style="font-family: var(--font-head); color: #fff;">Sistem Kararlılık Metresi (Stability Meter):</span>
+                        </div>
+                        <div class="stars" id="stabilityStars">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                        <div class="rating-text" id="ratingText">Analiz Bekleniyor...</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="download" style="text-align: center; padding: 3rem 0;">
+                <a href="https://pub-73f6813dffa44aeea69e2aa035b76cb3.r2.dev/netvapk.apk" class="btn-download" onclick="alert('İndirme simülasyonu başlatıldı. Sisteme bağlanılıyor...'); return false;">
+                    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    [Indir Netv Gold]
+                </a>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">[^]</div>
+
+    <script>
+        // Typewriter Effect Logic
+        const text = "Netv Gold V10: Yeni Nesil Teknik Analiz ve İndirme Merkezi";
+        const typewriterEl = document.getElementById('typewriter-text');
+        let index = 0;
+
+        function typeWriter() {
+            if (index < text.length) {
+                typewriterEl.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        
+        // Start typewriter after a short delay
+        setTimeout(typeWriter, 500);
+
+        // Back to Top Logic
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Stability Meter Logic (Star Rating)
+        const stars = document.querySelectorAll('.star');
+        const ratingText = document.getElementById('ratingText');
+        const defaultRating = 5; // To match schema
+
+        function setRating(rating) {
+            stars.forEach((s, idx) => {
+                if (idx < rating) {
+                    s.style.color = 'var(--amber)';
+                } else {
+                    s.style.color = 'var(--border)';
+                }
+            });
+            ratingText.textContent = `Puan: ${rating}.0 / 5.0 - [Sistem Onaylandı]`;
+            ratingText.style.color = 'var(--green)';
+        }
+
+        // Initialize default rating
+        setRating(defaultRating);
+
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const rating = this.getAttribute('data-value');
+                setRating(rating);
+            });
+        });
+
+        // Smooth Scroll for Sidebar
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
